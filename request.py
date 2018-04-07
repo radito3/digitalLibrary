@@ -13,9 +13,10 @@ with open('test.txt', 'rb') as f:
 
 # print(read_data)
 
-with open('new.txt', 'x') as f:
-    # print(type(read_data))
-    f.write(repr(read_data.decode('UTF-8')))
+with open('out.txt', 'wb') as f:
+    print(type(read_data))
+    # f.write(repr(read_data.decode('UTF-8')))
+    f.write(b''.join(read_data))
 
 with open('new.txt') as f:
     read_data = f.read()
