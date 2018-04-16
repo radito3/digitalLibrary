@@ -7,11 +7,10 @@ def hello():
     return 'Hello World!'
 
 
-@app.route('/test')
+@app.route('/get/book2')
 def test():
     with open('test.txt', 'rb') as f:
         return f.read()
-    # return request.base_url
 
 
 @app.route('/post', methods=['POST'])

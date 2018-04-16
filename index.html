@@ -43,6 +43,7 @@
                 clear: both;
             }
         </style>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     </head>
 
     <body>
@@ -72,9 +73,19 @@
                     <p>Ladyada's "E is for Electronics" is a coloring book adventure with electronic components and their inventors.</p>
                     <p>Makers of all ages can learn, color, and share common parts and historical figures throughout history. Explore the world of electronics with Ladyada as your guide!</p>
                     <a href="https://www.adafruit.com/products/1000" target="_blank">Buy online</a>
+		    <button id="book_2_download">Download</button>
                 </div>
             </div>
         </div>
 
+	<script>
+	    $('#book_2_download').click(() => {
+		$(this).attr({target: '_blank', 
+                    href  : 'http://localhost/get/book2'});
+		//$.get('http://localhost:5000/get/book2', (data, status) => {
+		    //asd
+		//},'html');
+	    });
+	</script>
     </body>
 </html>
