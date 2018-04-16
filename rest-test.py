@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 app = Flask(__name__)
 
 
@@ -8,9 +8,13 @@ def hello():
 
 
 @app.route('/get/book2')
-def test():
-    with open('test.txt', 'rb') as f:
-        return f.read()
+def getBook2():
+#    with open('issues/coloringbook_9-17-2012.pdf', 'rb') as f:
+#        return f.read()
+    try:
+        return send_file('issues/coloringbook_9-17-2012.pdf', as_attachment=True)
+    except Exception as e:
+        print(e)
 
 
 @app.route('/post', methods=['POST'])
