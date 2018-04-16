@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, send_file
 
 app = Flask(__name__)
+#app.config['APPLICATION_ROOT'] = 'abcabc'
 
 
 @app.route('/')
@@ -11,9 +12,9 @@ def hello():
 @app.route('/get/book1')
 def getBook1():
     try:
-	return send_file('issues/coloringbook_1-23-2014.pdf', as_attachment=True)
+        return send_file('issues/coloringbook_1-23-2014.pdf', as_attachment=True)
     except Exception as e:
-	print(e)
+        print(e)
 
 
 @app.route('/get/book2')
@@ -30,4 +31,4 @@ def post():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
