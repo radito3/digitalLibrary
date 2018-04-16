@@ -60,6 +60,7 @@
                 <div class="desc"><p>Ladyada's R is for Robotics is a coloring book adventure with robots, their inventors and more.</p>
                     <p>Makers of all ages can learn, color and share their favorite robots and roboticists.</p>
                     <a href="https://www.adafruit.com/products/1936" target="_blank">Buy online</a>
+		    <button id="book_1_download">Download</button>
                 </div>
             </div>
         </div>
@@ -79,12 +80,11 @@
         </div>
 
 	<script>
+	    $('#book_1_download').click(() => {
+		$(location).attr('href', 'http://localhost:5000/get/book1');
+	    });
 	    $('#book_2_download').click(() => {
-		$(this).attr({target: '_blank', 
-                    href  : 'http://localhost/get/book2'});
-		//$.get('http://localhost:5000/get/book2', (data, status) => {
-		    //asd
-		//},'html');
+		$(location).attr('href', 'http://localhost:5000/get/book2');
 	    });
 	</script>
     </body>
